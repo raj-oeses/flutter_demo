@@ -36,11 +36,7 @@ class BreakingNewsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => DescriptionScreen(article: article)),
-      ),
+      onTap: () => Get.to(() => DescriptionScreen(article: article)),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 010),
         child: SizedBox(

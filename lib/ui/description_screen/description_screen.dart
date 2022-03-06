@@ -28,58 +28,60 @@ class DescriptionBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: Wrap(
-            children: [
-              const Icon(Icons.people_alt_rounded),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  '${article?.author ?? ''} -> ${DateFormatter.dateFormat(article?.publishedAt ?? DateTime.now())}',
-                  maxLines: 2,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.normal,
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            child: Wrap(
+              children: [
+                const Icon(Icons.people_alt_rounded),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    '${article?.author ?? ''} -> ${DateFormatter.dateFormat(article?.publishedAt ?? DateTime.now())}',
+                    maxLines: 2,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                 ),
+              ],
+            ),
+          ),
+          Hero(
+            tag: article!.author!,
+            child: CustomImage(
+              imageUrl: article?.urlToImage ?? '',
+              imageWidth: SizeConfig.width() * 1,
+              imageHeight: SizeConfig.height() * .3,
+              cornerRadius: 0,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            child: Text(
+              article?.title ?? '',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: SizeConfig.width() * .05,
               ),
-            ],
-          ),
-        ),
-        Hero(
-          tag: article!.author!,
-          child: CustomImage(
-            imageUrl: article?.urlToImage ?? '',
-            imageWidth: SizeConfig.width() * 1,
-            imageHeight: SizeConfig.height() * .3,
-            cornerRadius: 0,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: Text(
-            article?.title ?? '',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: SizeConfig.width() * .05,
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text(
-            article?.description ?? '',
-            style: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: SizeConfig.width() * .04,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              article?.description ?? '',
+              style: TextStyle(
+                fontWeight: FontWeight.normal,
+                fontSize: SizeConfig.width() * .04,
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
