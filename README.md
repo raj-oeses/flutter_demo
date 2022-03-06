@@ -10,5 +10,6 @@ Framework • revision 9dd8bcd8c8 (9 months ago) • 2021-06-09 05:44:02 -0400
 Engine • revision 0fe99dd6dd
 Tools • Dart 2.14.0 (build 2.14.0-190.0.dev)
 
-you can contact me if there are any issue
+you can download .apk file from if there is any issue:::
+https://drive.google.com/file/d/1suN-fsVqYJYL7GmvRJL5fxzbYP29pW_s/view?usp=sharing
 
