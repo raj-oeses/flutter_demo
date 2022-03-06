@@ -36,17 +36,24 @@ class BreakingNewsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.to(() => DescriptionScreen(article: article)),
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => DescriptionScreen(article: article)),
+      ),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 010),
         child: SizedBox(
           height: SizeConfig.height() * .38,
           child: Stack(
             children: [
-              CustomImage(
-                imageUrl: article?.urlToImage ?? '',
-                imageWidth: SizeConfig.width() * 1,
-                imageHeight: SizeConfig.height() * .3,
+              Hero(
+                tag: article!.author!,
+                child: CustomImage(
+                  imageUrl: article?.urlToImage ?? '',
+                  imageWidth: SizeConfig.width() * 1,
+                  imageHeight: SizeConfig.height() * .3,
+                ),
               ),
               Align(
                 alignment: Alignment.bottomCenter,
