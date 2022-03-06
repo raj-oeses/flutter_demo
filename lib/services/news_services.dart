@@ -2,12 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tests/models/news_model.dart';
+import 'package:flutter_tests/utilities/date_time_parser.dart';
 import 'package:http/http.dart' as http;
 
 class NewsServices {
   static Future<NewsModel?> getNews() async {
     String newsUrl =
-        'https://newsapi.org/v2/everything?q=tesla&from=2022-02-05&sortBy=publishedAt&apiKey=1003e994eb4342079d6d359506836f86';
+        'https://newsapi.org/v2/everything?q=tesla&from=${DateFormatter.dateFormat(DateTime.now())}&sortBy=publishedAt&apiKey=1003e994eb4342079d6d359506836f86';
 
     NewsModel newsModel = NewsModel();
     try {
