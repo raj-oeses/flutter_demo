@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(const FlutterTestApp());
+  // runApp(const LanguageApp());
 }
 
 class FlutterTestApp extends StatelessWidget {
