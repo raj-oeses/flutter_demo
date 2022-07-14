@@ -44,7 +44,7 @@ class BreakingNewsItem extends StatelessWidget {
           child: Stack(
             children: [
               Hero(
-                tag: article!.author!,
+                tag: article!.author??'',
                 child: CustomImage(
                   imageUrl: article?.urlToImage ?? '',
                   imageWidth: SizeConfig.width() * 1,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tests/controller/controller_binding.dart';
 import 'package:flutter_tests/ui/dashboard_screen/dashboard_screen.dart';
+import 'package:flutter_tests/ui/google_maps/google_map_screen.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -21,8 +22,8 @@ class FlutterTestApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const DashboardScreen(),
+      // home: const DashboardScreen(),
+      home: GoogleMapScreen(),
     );
   }
 }
-
